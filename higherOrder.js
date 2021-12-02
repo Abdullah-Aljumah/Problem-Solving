@@ -6,8 +6,6 @@ function findSenior(list) {
       max = list[i].age;
     }
   }
-  let answer = list.filter((item) => {
-    return item.age === max;
-  });
+  let answer = list.filter((item) => item.age === max);
   return answer;
 }
