@@ -9,7 +9,11 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 ------------------------------------------------------------------------------------------------ */
 
 const raisedToTheThird = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.forEach((item) => {
+    newArr.push(Math.pow(item, 3));
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -20,7 +24,7 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 ------------------------------------------------------------------------------------------------ */
 
 const appendTheEnd = (str) => {
-  // Solution code here...
+  return str + " The end.";
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -38,6 +42,8 @@ console.log(a) prints [1, 2, 3, 1]
 
 const appendFirstToLast = (arr) => {
   // Solution code here...
+  let x = arr[0];
+  arr.push(x);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -56,7 +62,7 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
 const addBirthYearProperty = (obj, year) => {
-  // Solution code here...
+  obj.yearBorn = year;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -73,7 +79,9 @@ console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
 const setStatusAsAuthor = (people) => {
-  // Solution code here...
+  people.forEach((item) => {
+    item.isAuthor = true;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,7 +100,7 @@ console.log(a) prints [1, 2, 3, 4]
 ------------------------------------------------------------------------------------------------ */
 
 const append = (arr1, arr2) => {
-  // Solution code here...
+  arr1.push(...arr2);
 };
 
 /* ------------------------------------------------------------------------------------------------
