@@ -22,8 +22,15 @@ function lower(str) {
 }
 
 const updateAnimal = (arr, callback) => {
-  return arr.sort();
-  // Solution code here...
+  const newArr = [];
+  arr.forEach((item) => {
+    if (callback == lower) {
+      newArr.push(lower(item));
+    } else {
+      newArr.push(upper(item));
+    }
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -179,7 +186,16 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 const sortPeopleBetter = (arr) => {
-  // Solution code here...
+  // arr.sort(function (a, b) {
+  //   if (a.age == b.age) {
+  //     return a - b;
+  //   } else if (a.lastName == b.lastName) {
+  //     return a - b;
+  //   } else {
+  //     return a.lastName - a.lastName;
+  //   }
+  // });
+  // return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -205,6 +221,7 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (arr) => {
+  console.log("ARRRRRRRRRRRRRRRRRRRRRRRrr",arr);
   // Solution code here...
 };
 
