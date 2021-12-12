@@ -45,15 +45,18 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  let check = false;
-  for (let i = 0; i < input.length; i++) {
-    // console.log(String(input[i]), "INNNNNNPPPPPPPUUUUUTTTTT");
-    if (String(input[i]) * 1 != NaN) {
-      console.log(input[i], "TRUE");
-      check = true;
-    }
-  }
-  return check;
+  // let check = false;
+  // for (let i = 0; i < input.length; i++) {
+  //   // console.log(String(input[i]), "INNNNNNPPPPPPPUUUUUTTTTT");
+  //   if (String(input[i]) * 1 != NaN) {
+  //     console.log(input[i], "TRUE");
+  //     check = true;
+  //   }
+  // }
+  // return check;
+  const regex = /\d/;
+
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -64,12 +67,9 @@ Write a function named containsWorld that takes in a string or number of any len
 ------------------------------------------------------------------------------------------------ */
 
 const containsWorld = (input) => {
-  if (input.toLowerCase().includes("world")) {
-    return true;
-  } else {
-    return false;
-  }
-  // Solution code here...
+  const reg = /\bworld\b/;
+
+  return reg.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,17 +81,16 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // let newArr = str.split(" ");
-  // console.log(newArr, "HEEEEEEEEEERE");
-  // let result = [];
-  // for (let i = 0; i < newArr.length; i++) {
-  //   if (newArr[i].charAt(0) === newArr[i].charAt(0).toUpperCase()) {
-  //     result.push(newArr[i]);
-  //     console.log(typeof newArr[i].charAt(0));
-  //   }
-  //   console.log(result, "RESUUULLLLLTTT");
-  // }
-  // return result;
+  let newArr = [];
+  const reg = /^[A-Z]/;
+  const regex = /[\s,).]+/;
+  const arrSplit = str.split(regex);
+
+  arrSplit.forEach((string) => {
+    if (reg.test(string)) newArr.push(string);
+  });
+
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -100,18 +99,13 @@ CHALLENGE 6
 Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
 const citiesAtoJ = (arr) => {
-  const newArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (
-      arr[i]
-        .charAt(0)
-        .includes(
-          "A" || "B" || "C" || "D" || "E" || "F" || "G" || "H" || "I" || "J"
-        )
-    ) {
-      newArr.push(arr[i]);
-    }
-  }
+  let newArr = [];
+  const reg = /^[A-J]/;
+
+  arr.forEach((item) => {
+    if (reg.test(item)) newArr.push(item);
+  });
+
   return newArr;
 };
 
@@ -128,12 +122,8 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // if(input.includes("October" || "Oct" || "october" || "oct")){
-  //   return true
-  // } else {
-  //   return false
-  // }
-}
+  // Solution code here...
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
