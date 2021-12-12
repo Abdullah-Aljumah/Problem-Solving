@@ -168,11 +168,9 @@ const people = [
 ];
 
 const sortPeople = (arr) => {
-  // arr.sort(function (a, b) {
-  //   return a.lastName - a.lastName;
-  // });
-  // console.log("AAAAAAAAAAAAAAAAAAAAAA",arr);
-  // return arr;
+  return arr.sort((a, b) => {
+    return a.lastName.toLowerCase() < b.lastName.toLowerCase() ? -1 : 1;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -186,16 +184,11 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 const sortPeopleBetter = (arr) => {
-  // arr.sort(function (a, b) {
-  //   if (a.age == b.age) {
-  //     return a - b;
-  //   } else if (a.lastName == b.lastName) {
-  //     return a - b;
-  //   } else {
-  //     return a.lastName - a.lastName;
-  //   }
-  // });
-  // return arr;
+  return arr.sort((a, b) => {
+    if (a.lastName !== b.lastName) return a.lastName < b.lastName ? -1 : 1;
+    if (a.firstName !== b.firstName) return a.firstName < b.firstName ? -1 : 1;
+    return a.age < b.age ? -1 : 1;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -220,9 +213,20 @@ const meetings = [
   new Meeting("Friday", "1200", "1345"),
 ];
 
+const days = {
+  Sunday: 0,
+  Monday: 1,
+  Tuesday: 2,
+  Wednesday: 3,
+  Thursday: 4,
+  Friday: 5,
+  Saturday: 6,
+};
+
 const sortMeetingsByDay = (arr) => {
-  console.log("ARRRRRRRRRRRRRRRRRRRRRRRrr",arr);
-  // Solution code here...
+  return arr.sort((a, b) => {
+    return days[a.dayOfWeek] - days[b.dayOfWeek];
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -236,7 +240,11 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 ------------------------------------------------------------------------------------------------ */
 
 const sortSchedule = (arr) => {
-  // Solution code here...
+  return arr.sort((a, b) => {
+    const schedul1 = a.end - a.start;
+    const schedul2 = b.end - b.start;
+    return days[a.dayOfWeek] - days[b.dayOfWeek] || schedul1 - schedul2;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
