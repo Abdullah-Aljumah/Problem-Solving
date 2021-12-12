@@ -7,7 +7,11 @@ Write a function called addTwo that takes in an array and adds two to every valu
 ------------------------------------------------------------------------------------------------ */
 
 const addTwo = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(arr[i] + 2);
+  }
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -18,7 +22,14 @@ Write a function named containsW that takes in a string. This function should us
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
-  // Solution code here...
+  // console.log(str, "SSSSSSTTTTTRRRRR");
+  for (let i = 0; i < str.length; i++) {
+    if (str.includes("w")) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -34,7 +45,15 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  // Solution code here...
+  let check = false;
+  for (let i = 0; i < input.length; i++) {
+    // console.log(String(input[i]), "INNNNNNPPPPPPPUUUUUTTTTT");
+    if (String(input[i]) * 1 != NaN) {
+      console.log(input[i], "TRUE");
+      check = true;
+    }
+  }
+  return check;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,6 +64,11 @@ Write a function named containsWorld that takes in a string or number of any len
 ------------------------------------------------------------------------------------------------ */
 
 const containsWorld = (input) => {
+  if (input.toLowerCase().includes("world")) {
+    return true;
+  } else {
+    return false;
+  }
   // Solution code here...
 };
 
@@ -57,7 +81,17 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+  // let newArr = str.split(" ");
+  // console.log(newArr, "HEEEEEEEEEERE");
+  // let result = [];
+  // for (let i = 0; i < newArr.length; i++) {
+  //   if (newArr[i].charAt(0) === newArr[i].charAt(0).toUpperCase()) {
+  //     result.push(newArr[i]);
+  //     console.log(typeof newArr[i].charAt(0));
+  //   }
+  //   console.log(result, "RESUUULLLLLTTT");
+  // }
+  // return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -66,7 +100,19 @@ CHALLENGE 6
 Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  const newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (
+      arr[i]
+        .charAt(0)
+        .includes(
+          "A" || "B" || "C" || "D" || "E" || "F" || "G" || "H" || "I" || "J"
+        )
+    ) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,8 +128,12 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // Solution code here...
-};
+  // if(input.includes("October" || "Oct" || "october" || "oct")){
+  //   return true
+  // } else {
+  //   return false
+  // }
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
