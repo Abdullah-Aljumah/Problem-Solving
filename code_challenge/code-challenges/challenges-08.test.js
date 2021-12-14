@@ -34,7 +34,9 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
 
 const containsAnd = (arr) => {
-  // Solution code here...
+  return arr.filter((item) => {
+    return item.includes("and");
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,7 +48,13 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const oddValues = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.filter((item) => {
+    if (typeof item != "string" && item % 2 != 0) {
+      newArr.push(item);
+    }
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,7 +68,19 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 ------------------------------------------------------------------------------------------------ */
 
 const filterStringsWithVowels = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.filter((item) => {
+    if (
+      item.includes("e") ||
+      item.includes("a") ||
+      item.includes("o") ||
+      item.includes("i") ||
+      item.includes("u")
+    ) {
+      newArr.push(item);
+    }
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -72,7 +92,10 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  arr = arr.filter((item) => {
+    return !forbiddenValues.includes(item);
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
