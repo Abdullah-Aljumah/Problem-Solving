@@ -45,15 +45,6 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  // let check = false;
-  // for (let i = 0; i < input.length; i++) {
-  //   // console.log(String(input[i]), "INNNNNNPPPPPPPUUUUUTTTTT");
-  //   if (String(input[i]) * 1 != NaN) {
-  //     console.log(input[i], "TRUE");
-  //     check = true;
-  //   }
-  // }
-  // return check;
   const regex = /\d/;
 
   return regex.test(input);

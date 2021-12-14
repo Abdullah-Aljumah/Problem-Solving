@@ -6,9 +6,7 @@ CHALLENGE 1 - Review
 Write a function named replaceZeros that, given a string, uses Regex to replace all '0' with the word 'zero'. 
 ------------------------------------------------------------------------------------------------ */
 
-const replaceZeros = (string) => {
-  // Solution code here...
-};
+const replaceZeros = (string) => {};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -17,7 +15,12 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.map((item) => {
+    newArr.push(item + 1);
+  });
+
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -27,13 +30,19 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 ------------------------------------------------------------------------------------------------ */
 
 const addQuestion = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.map((item) => {
+    newArr.push(item + "?");
+  });
+
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named forLoopTwoToThe that, given an array of integers as input, iterates over the array and returns a new array. The returned array should contain the result of raising 2 to the power of the original input element.
+Write a function named forLoopTwoToThe that, given an array of integers as input, iterates over the array and returns a new array.
+ The returned array should contain the result of raising 2 to the power of the original input element.
 
 You may choose to complete this challenge using a for loop, for...in syntax, or for...of syntax.
 
@@ -41,7 +50,11 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.forEach((item) => {
+    newArr.push(Math.pow(2, item));
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -50,9 +63,7 @@ CHALLENGE 5
 Write a function named forEachTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 1, but uses forEach instead of a for loop.
 ------------------------------------------------------------------------------------------------ */
 
-const forEachTwoToThe = (arr) => {
-  // Solution code here...
-};
+const forEachTwoToThe = (arr) => {};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -61,7 +72,11 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.map((item) => {
+    newArr.push(Math.pow(2, item));
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------

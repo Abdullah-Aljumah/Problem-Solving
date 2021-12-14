@@ -83,7 +83,7 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
+  return arr.split("");
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -141,7 +141,6 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -173,7 +172,9 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  return arr.filter((item) => {
+    return item % 2 !== 0;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -192,7 +193,7 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
+  return str.slice(0, str.length - numberOfCharacters);
 };
 
 /* ------------------------------------------------------------------------------------------------
