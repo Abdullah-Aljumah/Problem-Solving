@@ -203,6 +203,8 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => {
+  console.log(arr);
+  return arr;
   // Solution code here...
 };
 
@@ -215,7 +217,7 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 ------------------------------------------------------------------------------------------------ */
 
 const evenOddNumericValues = (arr) => {
-  // Solution code here...
+  
 };
 
 /* ------------------------------------------------------------------------------------------------

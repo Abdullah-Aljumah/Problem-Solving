@@ -19,7 +19,10 @@ Becomes:
 ------------------------------------------------------------------------------------------------ */
 
 function transformToLis(obj) {
-  // Solution code here...
+  // let newArr = [];
+  // newArr.push(`<li> ${obj} </li>`);
+  // console.log(newArr);
+  // return newArr;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -30,7 +33,10 @@ Write a function named addValues that, given an array of numbers as input, uses 
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr) => {
-  // Solution code here...
+  return arr.reduce((acc, num) => {
+    //  console.log(num);
+    return (acc += num);
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,7 +52,10 @@ Write a function named addPurchases that, given an array of objects as input, us
 ------------------------------------------------------------------------------------------------ */
 
 const addPurchases = (arr) => {
-  // Solution code here...
+  return arr.reduce((acc, array) => {
+    // console.log(array);
+    return (acc += array.purchasePrice);
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -58,7 +67,9 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  // Solution code here...
+  return arr.reduce((acc) => {
+    return (acc += 1);
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -121,7 +132,10 @@ let starWarsData = [
 ];
 
 const returnNames = (arr) => {
-  // Solution code here...
+  return arr.reduce((acc, array) => {
+    acc.push(array.name);
+    return acc;
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -133,7 +147,13 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
+  let string = str.split("");
+  return string.reduce((acc, item) => {
+    // console.log(item, "item");
+    // console.log(acc, "acc");
+    // console.log(item + acc, "item + acc");
+    return item + acc;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -186,7 +206,12 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
+  return arr.reduce((acc, item) => {
+    if (item.children) {
+      acc += item.children.length;
+    }
+    return acc;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
