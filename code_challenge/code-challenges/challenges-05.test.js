@@ -173,7 +173,7 @@ For example:
 
 const removeEvenValues = (arr) => {
   return arr.filter((item) => {
-    return item % 2 !== 0;
+    item % 2;
   });
 };
 
@@ -369,12 +369,12 @@ describe("Testing challenge 8", () => {
 describe("Testing challenge 9", () => {
   test("It should remove the even numbers from the array", () => {
     let list = [1, 2, 3, 4, 5, 6];
-    removeEvenValues(list);
-    expect(list).toStrictEqual([1, 3, 5]);
+
+    expect(list).toStrictEqual([ 1, 3 , 5 ]);
 
     list = [6, 3, 19, 43, 12, 66, 43];
     removeEvenValues(list);
-    expect(list).toStrictEqual([3, 19, 43, 43]);
+    expect(list).toStrictEqual([ 3, 19 , 43 , 43 ]);
     expect(list.length).toStrictEqual(4);
   });
 });

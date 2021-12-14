@@ -90,7 +90,12 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  // Solution code here...
+  let newArr = [];
+
+  arr.forEach((item) => {
+    newArr.push(item.charCodeAt(0));
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -104,7 +109,17 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.map((item) => {
+    if (typeof item === "string") {
+      newArr.push("N/A");
+    } else if (item % 2 === 0) {
+      newArr.push("even");
+    } else if (item % 2 !== 0) {
+      newArr.push("odd");
+    }
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -150,7 +165,11 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.map((item) => {
+    newArr.push(item.ability.name);
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -197,7 +216,12 @@ const snorlaxStats = {
 };
 
 const extractStats = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.map((item) => {
+    newArr.push({ name: item.stat.name, total: item.effort + item.baseStat });
+  });
+  console.log(newArr);
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
