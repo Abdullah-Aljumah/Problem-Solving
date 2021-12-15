@@ -23,7 +23,11 @@ Returns: ['dyoll', 'eimaj'];
 ------------------------------------------------------------------------------------------------ */
 
 const getNames = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.map((item) => {
+    newArr.push(item.name.split("").reverse().join(""));
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -37,9 +41,16 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
-};
+  let count = 0;
+  input.map((item) => {
+    console.log(item, "ITEM");
+    item.map((ele) => {
+      console.log(ele, "ELE");
+    });
+  });
 
+  return count;
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 

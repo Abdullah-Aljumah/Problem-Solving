@@ -19,10 +19,12 @@ Becomes:
 ------------------------------------------------------------------------------------------------ */
 
 function transformToLis(obj) {
-  // let newArr = [];
-  // newArr.push(`<li> ${obj} </li>`);
-  // console.log(newArr);
-  // return newArr;
+  let newArr = [];
+  for (const property in obj) {
+    newArr.push(`<li>${property}: ${obj[property]}</li>`);
+  }
+  console.log(newArr);
+  return newArr;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -222,9 +224,7 @@ Write a function that, given an array of numbers as input, uses reduce to calcul
 Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
-const calculateAverage = (arr) => {
-  // Solution code here...
-};
+const calculateAverage = (arr) => {};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
@@ -244,7 +244,10 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  return arr.reduce((acc, item) => {
+    if (isPrime(item)) acc++;
+    return acc;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -287,7 +290,14 @@ const snorlaxData = {
 };
 
 const extractStat = (statName, arr) => {
-  // Solution code here...
+  const name = arr.reduce((acc, item) => {
+    if (item.stat.name == statName) {
+      acc = item;
+    }
+    return acc;
+  }, "");
+  // console.log(name);
+  return name ? name : null;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -301,7 +311,12 @@ Write a function named extractChildren that, given the array of characters from 
 ------------------------------------------------------------------------------------------------ */
 
 const extractChildren = (arr) => {
-  // Solution code here...
+  return arr
+    .filter((item) => item.name.includes("a"))
+    .reduce((acc, ele) => {
+      if (ele.children) acc.push(...ele.children);
+      return acc;
+    }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------

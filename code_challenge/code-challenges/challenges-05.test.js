@@ -126,10 +126,7 @@ const gruffaloCrumble = {
   ],
 };
 
-const listFoods = (recipe) => {
-  let result = [];
-  // Solution code here...
-};
+const listFoods = (recipe) => {};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -155,7 +152,11 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.steps.map((item) => {
+    result.push(item.split(" ")[0]);
+  });
+
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -172,9 +173,11 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  return arr.filter((item) => {
-    item % 2;
-  });
+  // console.log("AA");
+  // return arr.filter((item) => {
+  //   console.log(item % 2 !== 0);
+  //   return item % 2 !== 0;
+  // });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -204,7 +207,12 @@ Write a function named totalSumCSV that, given a string of comma-separated value
 
 const totalSumCSV = (str) => {
   let total = 0;
-  // Solution code here...
+
+  let newArr = str.split(",");
+  for (let i = 0; i < newArr.length; i++) {
+    total += Number(newArr[i]);
+  }
+  return total;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -216,7 +224,7 @@ For example, removeVowels('gregor') returns 'grgr'.
 ------------------------------------------------------------------------------------------------ */
 
 const removeVowels = (str) => {
-  // Solution code here...
+  return str.replace(/[aeiou]/gi, "");
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -370,11 +378,11 @@ describe("Testing challenge 9", () => {
   test("It should remove the even numbers from the array", () => {
     let list = [1, 2, 3, 4, 5, 6];
 
-    expect(list).toStrictEqual([ 1, 3 , 5 ]);
+    expect(list).toStrictEqual([1, 3, 5]);
 
     list = [6, 3, 19, 43, 12, 66, 43];
     removeEvenValues(list);
-    expect(list).toStrictEqual([ 3, 19 , 43 , 43 ]);
+    expect(list).toStrictEqual([3, 19, 43, 43]);
     expect(list.length).toStrictEqual(4);
   });
 });

@@ -6,7 +6,10 @@ CHALLENGE 1 - Review
 Write a function named replaceZeros that, given a string, uses Regex to replace all '0' with the word 'zero'. 
 ------------------------------------------------------------------------------------------------ */
 
-const replaceZeros = (string) => {};
+const replaceZeros = (string) => {
+  return string.replace(/[0]/g, "zero");
+
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -63,7 +66,16 @@ CHALLENGE 5
 Write a function named forEachTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 1, but uses forEach instead of a for loop.
 ------------------------------------------------------------------------------------------------ */
 
-const forEachTwoToThe = (arr) => {};
+const forEachTwoToThe = (arr) => {
+  let result = [];
+
+  arr.forEach((item) => {
+    result.push(Math.pow(2, item));
+  });
+
+  return result;
+};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6

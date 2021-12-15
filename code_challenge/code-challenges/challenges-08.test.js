@@ -203,9 +203,7 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => {
-  console.log(arr);
-  return arr;
-  // Solution code here...
+  return arr.filter((item) => !item.children);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -217,7 +215,18 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 ------------------------------------------------------------------------------------------------ */
 
 const evenOddNumericValues = (arr) => {
-  
+  let newArr = [];
+  console.log(arr, "Arr");
+  arr
+    .filter((item) => typeof item == "number")
+    .map((ele) => {
+      if (ele % 2 == 0) {
+        newArr.push("even");
+      } else {
+        newArr.push("odd");
+      }
+    });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
